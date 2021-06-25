@@ -22,9 +22,13 @@ window.onload = () => {
 
     const app = Vue.createApp({
         components: {
-            'test': Vue.defineAsyncComponent(() => loadModule('/static/js/test_module.vue', options))
+            'test': Vue.defineAsyncComponent(() => loadModule('/static/js/text_text.vue', options)),
+            'main_hoge': Vue.defineAsyncComponent(() => loadModule('/static/js/main.vue', options)),
         },
-        template: '<test></test>'
+        template: `
+        <test/>
+        <main_hoge/>
+        `
     });
     app.mount('#app');
 }
